@@ -1,0 +1,23 @@
+name: Icon request
+description: Suggest an Iranian bank, payment provider, or corrected logo.
+title: "[Icon]: "
+body:
+  - type: input
+    id: provider
+    attributes:
+      label: Provider name
+      description: English and Persian names, if available.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Official artwork source
+      description: Link to the provider's official site or brand assets.
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Color/monochrome availability, replacement artwork, or other context.

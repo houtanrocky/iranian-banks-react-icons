@@ -1,7 +1,12 @@
+:root { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: #202b25; background: #fafbf7; font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
 *, *::before, *::after { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  font-family: Inter, system-ui, -apple-system, sans-serif;
-  -webkit-font-smoothing: antialiased;
-}
+body { margin: 0; }
+button, input { font: inherit; }
+button, a, input { -webkit-tap-highlight-color: transparent; }
+button, a { touch-action: manipulation; }
+a { color: inherit; text-underline-offset: 4px; }
+button { cursor: pointer; }
+img { max-width: 100%; object-fit: contain; }
+:focus-visible { outline: 3px solid #19734e; outline-offset: 4px; }
+::selection { background: #cfebc8; color: #163d2c; }
+html { scroll-padding-top: 24px; }

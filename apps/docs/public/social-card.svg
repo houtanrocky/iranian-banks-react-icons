@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f7f9f1"/>
+  <rect x="48" y="48" width="1104" height="534" rx="24" fill="none" stroke="#dce5d1" stroke-width="2"/>
+  <rect x="96" y="93" width="56" height="56" rx="12" fill="#265f42"/>
+  <path d="m107 114 17-10 17 10h-34Zm3 5h6v15h-6v-15Zm11 0h6v15h-6v-15Zm11 0h6v15h-6v-15Zm-25 20h34v4h-34Z" fill="#f0f5e8"/>
+  <g font-family="Segoe UI,Arial,sans-serif">
+    <text x="172" y="130" fill="#36513a" font-size="25" font-weight="600">iranian banks / icons</text>
+    <text x="96" y="255" fill="#202b25" font-size="68" font-weight="700">Iranian bank icons.</text>
+    <text x="96" y="340" fill="#4d7959" font-size="64" font-weight="600">Ready for your next build.</text>
+    <text x="98" y="408" fill="#566b50" font-size="27">59 providers. 117 SVG variants. MIT licensed.</text>
+    <rect x="96" y="465" width="146" height="52" rx="8" fill="#265f42"/>
+    <text x="133" y="499" fill="white" font-size="23">React</text>
+    <rect x="257" y="465" width="134" height="52" rx="8" fill="#e5eddc"/>
+    <text x="300" y="499" fill="#315335" font-size="23">Vue</text>
+    <rect x="406" y="465" width="184" height="52" rx="8" fill="#e5eddc"/>
+    <text x="440" y="499" fill="#315335" font-size="23">Plain SVG</text>
+    <text x="800" y="500" fill="#4e6646" font-size="19">Open source. TypeScript included.</text>
+  </g>
+</svg>

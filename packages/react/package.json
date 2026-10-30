@@ -1,7 +1,7 @@
 {
   "name": "@iran-utils/iranian-banks-react-icons",
   "version": "1.0.4",
-  "description": "React SVG icon library for Iranian banks and payment providers — 60+ logos with color and monochrome variants.",
+  "description": "React SVG icon library for Iranian banks and payment providers — 59 logos with color and monochrome variants.",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./index.d.ts",
@@ -13,27 +13,61 @@
     }
   },
   "sideEffects": false,
-  "files": ["dist", "index.d.ts"],
+  "files": [
+    "dist",
+    "index.d.ts",
+    "LICENSE"
+  ],
   "author": "Houtan Rocky",
   "license": "MIT",
   "keywords": [
-    "react", "icons", "svg", "svg-icons", "react-icons", "react-svg",
-    "iranian", "persian", "iran", "bank", "bank-icons", "banking",
-    "fintech", "payment", "payment-icons", "iranian-bank",
-    "melli", "mellat", "saderat", "tejarat", "pasargad", "saman",
-    "parsian", "zarrinpal", "idpay", "vandar", "shaparak", "psp"
+    "react",
+    "icons",
+    "svg",
+    "svg-icons",
+    "react-icons",
+    "react-svg",
+    "iranian",
+    "persian",
+    "iran",
+    "bank",
+    "bank-icons",
+    "banking",
+    "fintech",
+    "payment",
+    "payment-icons",
+    "iranian-bank",
+    "melli",
+    "mellat",
+    "saderat",
+    "tejarat",
+    "pasargad",
+    "saman",
+    "parsian",
+    "zarrinpal",
+    "idpay",
+    "vandar",
+    "shaparak",
+    "psp",
+    "iranian-bank-icons",
+    "persian-bank-icons",
+    "payment-gateway",
+    "typescript",
+    "tree-shaking"
   ],
-  "bugs": { "url": "https://github.com/houtan-rocky/iranian-banks-react-icons/issues" },
+  "bugs": {
+    "url": "https://github.com/houtanrocky/iranian-banks-react-icons/issues"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/houtan-rocky/iranian-banks-react-icons.git",
+    "url": "git+https://github.com/houtanrocky/iranian-banks-react-icons.git",
     "directory": "packages/react"
   },
-  "homepage": "https://houtan-rocky.github.io/iranian-banks-react-icons/",
+  "homepage": "https://houtanrocky.github.io/iranian-banks-react-icons/",
   "dependencies": {
     "@iran-utils/iranian-banks-icons-core": "workspace:*"
   },
   "peerDependencies": {
-    "react": "^16.13.1 || ^17.0.1 || ^18.0.0 || ^19.2.0"
+    "react": "^16.13.1 || ^17.0.1 || ^18.0.0 || ^19.0.0"
   }
 }

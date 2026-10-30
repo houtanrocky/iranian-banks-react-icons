@@ -1,0 +1,24 @@
+name: Bug report
+description: Report a rendering, type, package, or documentation problem.
+title: "[Bug]: "
+body:
+  - type: input
+    id: package
+    attributes:
+      label: Package and version
+      placeholder: "@iran-utils/iranian-banks-react-icons 1.0.4"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Include the icon export, framework version, bundler, and a minimal code example or reproduction URL.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true

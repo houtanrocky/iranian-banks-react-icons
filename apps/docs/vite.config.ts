@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [react()],
   base: '/iranian-banks-react-icons/',
   build: {
-    outDir: '../../docs',
+    outDir: 'dist',
     emptyOutDir: true,
   },
 });

@@ -1,27 +1,47 @@
 {
   "name": "@iran-utils/monorepo",
   "private": true,
+  "packageManager": "pnpm@10.13.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "description": "pnpm monorepo for Iranian banks icon packages",
   "scripts": {
-    "optimize": "rimraf ./optimized && svgo -q -p 8 -f ./raw -o ./optimized",
+    "optimize": "node scripts/optimize.js",
     "build:core": "node scripts/build-core.js",
     "build:react": "node scripts/build-react.js",
     "build:vue": "node scripts/build-vue.js",
     "build": "pnpm optimize && pnpm build:core && pnpm build:react && pnpm build:vue",
-    "prepare": "pnpm build",
+    "test": "pnpm build && pnpm test:unit && pnpm test:types && pnpm test:images && pnpm test:packages",
+    "test:unit": "node --test tests/*.test.js",
+    "test:types": "tsc -p tests/types/tsconfig.json && tsc -p tests/types/tsconfig.vue.json",
+    "test:images": "node scripts/audit-images.js --check",
+    "test:packages": "node scripts/test-packages.js",
+    "test:e2e": "playwright test",
+    "test:all": "pnpm test && pnpm --filter docs build && pnpm test:e2e",
+    "audit:images": "node scripts/audit-images.js",
     "docs:dev": "pnpm --filter docs dev",
     "docs:build": "pnpm build && pnpm --filter docs build",
     "release": "pnpm changeset publish"
   },
   "devDependencies": {
-    "@babel/core": "catalog:build",
-    "@babel/preset-react": "catalog:build",
-    "@changesets/cli": "catalog:releases",
-    "@svgr/cli": "catalog:build",
-    "@svgr/core": "catalog:build",
+    "@axe-core/playwright": "4.11.1",
+    "@changesets/cli": "^3.0.3",
+    "@playwright/test": "1.64.1",
+    "@types/node": "^22.20.5",
+    "@types/react": "catalog:react",
+    "@types/react-dom": "catalog:react",
+    "@vue/server-renderer": "^3.5.44",
     "camelcase": "catalog:build",
-    "rimraf": "catalog:build",
+    "esbuild": "^0.28.2",
+    "fast-xml-parser": "^5.11.2",
+    "jsdom": "^27.4.0",
+    "react": "catalog:react",
+    "react-dom": "catalog:react",
+    "sharp": "0.35.5",
     "svgo": "catalog:build",
-    "terser": "catalog:build"
+    "terser": "catalog:build",
+    "typescript": "^5.9.3",
+    "vue": "^3.5.44"
   }
 }

@@ -1,7 +1,5 @@
-import type { DefineComponent } from 'vue';
-export type IconProps = {
-  [key: string]: unknown;
-};
+import type { DefineComponent, SVGAttributes } from 'vue';
+export type IconProps = SVGAttributes & { [key: string]: unknown };
 export declare const AsanPardakhtColorIcon: DefineComponent<IconProps>;
 export declare const AsanPardakhtIcon: DefineComponent<IconProps>;
 export declare const AyandehColorIcon: DefineComponent<IconProps>;

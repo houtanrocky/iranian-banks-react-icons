@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "node ../../scripts/build-docs-assets.js && tsc && vite build && vite build --ssr src/prerender.tsx --outDir dist-ssr && node dist-ssr/prerender.js",
+    "predev": "node ../../scripts/build-docs-assets.js",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -16,8 +17,6 @@
   "devDependencies": {
     "@types/react": "catalog:react",
     "@types/react-dom": "catalog:react",
-    "@typescript-eslint/eslint-plugin": "catalog:tooling",
-    "@typescript-eslint/parser": "catalog:tooling",
     "@vitejs/plugin-react": "catalog:react",
     "typescript": "catalog:tooling",
     "vite": "catalog:tooling"
