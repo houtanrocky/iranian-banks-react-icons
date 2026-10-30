@@ -88,6 +88,7 @@ test('gallery images resolve, mobile layout fits and accessibility checks pass',
   page.on('response', response => { if (response.status() >= 400) failures.push(response.url()); });
   await page.goto('./');
   await page.getByRole('button', { name: 'Copy Bank Melli React import' }).scrollIntoViewIfNeeded();
+  await expect(page.locator('.install-box code')).toHaveAttribute('tabindex', '0');
   await expect.poll(() => page.locator('.icon-card img').first().evaluate((image: HTMLImageElement) => image.complete && image.naturalWidth > 0)).toBe(true);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
   const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();

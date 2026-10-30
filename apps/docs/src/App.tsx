@@ -96,7 +96,7 @@ export default function App() {
           {(Object.keys(PACKAGES) as Framework[]).map(value => <button key={value} aria-pressed={framework === value}
             onClick={() => setFramework(value)}>{value === 'Core' ? 'Core / SVG' : value}</button>)}
           <a href={`https://www.npmjs.com/package/${PACKAGES[framework]}`} aria-label={`${framework} package on npm`}>npm ↗</a></div>
-          <div className="install-box"><code>{install}</code><button onClick={() => void copy(install)} aria-label="Copy install command">Copy</button></div>
+          <div className="install-box"><code tabIndex={0}>{install}</code><button onClick={() => void copy(install)} aria-label="Copy install command">Copy</button></div>
           <pre tabIndex={0} aria-label={`${framework} usage example`}><code>{example}</code></pre>
           <button className="copy-example" onClick={() => void copy(example)}>Copy example ↗</button>
         </div>
