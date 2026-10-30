@@ -7,7 +7,7 @@ allowBuilds:
 
 catalogs:
   build:
-    camelcase: ^6.3.0
+    camelcase: ^10.0.0
     svgo: ^4.1.0
     terser: ^5.51.2
   react:
