@@ -1,6 +1,6 @@
 {
   "name": "@iran-utils/iranian-banks-vue-icons",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Vue 3 SVG icon library for Iranian banks and payment providers — 59 logos with color and monochrome variants.",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
