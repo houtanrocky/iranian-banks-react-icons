@@ -36,6 +36,7 @@
     "esbuild": "^0.28.2",
     "fast-xml-parser": "^5.11.2",
     "jsdom": "^27.4.0",
+    "pkg-pr-new": "0.0.92",
     "react": "catalog:react",
     "react-dom": "catalog:react",
     "sharp": "0.35.5",

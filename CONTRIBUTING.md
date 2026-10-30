@@ -22,6 +22,8 @@ pnpm docs:dev
 6. Run `pnpm test:all`. Review the generated image audit and look at color and mono artwork at small and large sizes. New artwork must pass rendering checks at 96 and 256 pixels.
 7. Add a changeset (`pnpm exec changeset`) for package behavior or artwork changes. Update all affected packages; docs-only changes do not need a package release.
 
+After CI passes on `main`, the release workflow consumes changesets, commits version/changelog updates, and publishes to npm when trusted publishing is enabled. Do not manually bump package versions. Optional commit previews and the owner setup are documented in [the release guide](reports/releases.md).
+
 ## Verification
 
 - `pnpm test:unit`: exports, generators, DOM events/refs, React/Vue SSR, catalog and search.

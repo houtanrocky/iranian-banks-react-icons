@@ -140,6 +140,8 @@ reports/              Image audit and discoverability notes
 
 GitHub Pages deployment builds the site after successful tests on `main`, then publishes `apps/docs/dist` with the official Pages artifact and deployment actions. See the [visibility and publishing guide](reports/visibility.md) for repository metadata, social previews, sitemap submission, and release notes.
 
+Stable npm releases run automatically after CI passes on `main` when a changeset requests a version bump. Optional `pkg.pr.new` previews publish core, React, and Vue together for testing individual commits. See the [release and preview setup guide](reports/releases.md) for one-time owner setup, activation, and failure recovery.
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md). [Report a bug](https://github.com/houtanrocky/iranian-banks-react-icons/issues/new?template=bug-report.yml), [request an icon](https://github.com/houtanrocky/iranian-banks-react-icons/issues/new?template=icon-request.yml), or improve the documentation. Add source SVGs to `raw/` and keep existing export names stable.

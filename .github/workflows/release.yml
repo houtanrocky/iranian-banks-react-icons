@@ -1,42 +1,84 @@
 name: Release
 
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: [CI]
+    branches: [main]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      resume_publish:
+        description: Retry an already-versioned release after fixing a publishing failure
+        type: boolean
+        default: false
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
+
+concurrency:
+  group: stable-npm-release
+  cancel-in-progress: false
 
 jobs:
   release:
-    name: Release
+    name: Version and publish changesets
+    if: >-
+      vars.NPM_PUBLISH_ENABLED == 'true' &&
+      ((github.event_name == 'workflow_run' &&
+        github.event.workflow_run.event == 'push' &&
+        github.event.workflow_run.conclusion == 'success' &&
+        github.event.workflow_run.head_repository.full_name == github.repository) ||
+       (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'))
     runs-on: ubuntu-latest
+    environment: npm
+    permissions:
+      contents: write
+      id-token: write
     steps:
       - uses: actions/checkout@v7
         with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
           fetch-depth: 0
-
       - uses: pnpm/action-setup@v6
-
       - uses: actions/setup-node@v7
         with:
           node-version: 24
-          cache: 'pnpm'
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Build and verify all packages
-        run: pnpm test
-
-      - name: Create Release Pull Request or Publish to npm
-        uses: changesets/action@v2
-        with:
-          publish-script: pnpm release
-          commit-message: 'ci: release packages'
-          pr-title: 'ci: release packages'
+          registry-url: https://registry.npmjs.org
+          package-manager-cache: false
+      - name: Install npm with trusted publishing support
+        run: npm install --global npm@12.2.1
+      - run: pnpm install --frozen-lockfile
+      - name: Plan release from the tested main commit
+        id: plan
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          RESUME_PUBLISH: ${{ inputs.resume_publish || false }}
+        run: |
+          git fetch origin main
+          mkdir -p .artifacts
+          pnpm exec changeset status --output=.artifacts/release-plan.json
+          node scripts/release-plan.js
+      - name: Version packages and consume changesets
+        if: steps.plan.outputs.version == 'true'
+        run: |
+          pnpm exec changeset version
+          pnpm install --lockfile-only --ignore-scripts
+      - name: Verify the packages that will be published
+        if: steps.plan.outputs.release == 'true'
+        run: pnpm test
+      - name: Commit version updates before publishing
+        if: steps.plan.outputs.version == 'true'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A -- .changeset packages pnpm-lock.yaml
+          git commit -m 'chore(release): version packages [skip ci]'
+          git push origin HEAD:main
+      - name: Publish to npm and create release tags
+        if: steps.plan.outputs.release == 'true'
+        uses: changesets/action/publish@v2
+        with:
+          script: pnpm release
+          create-github-releases: true
+          push-git-tags: true
+        env:
+          NPM_CONFIG_PROVENANCE: 'true'

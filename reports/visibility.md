@@ -34,7 +34,7 @@ Upload `.github/social-preview.png` in **Settings → General → Social preview
 1. Verify the live page and sitemap, and use Google Search Console or Bing Webmaster Tools if you own the appropriate site property. Submit the sitemap URL. Search-engine verification and indexing require the owner's account; no ranking or indexing date can be guaranteed.
 2. For a project site, `robots.txt` under `/iranian-banks-react-icons/` is informational. Crawlers use `https://houtanrocky.github.io/robots.txt` at the host root. Do not assume a project-local robots file controls the entire GitHub Pages host.
 3. Merge the source pull request to make the improved README, issue forms, and workflows the repository default. Publishing the showcase does not publish npm packages.
-4. Merge the Changesets release pull request when ready to ship the fixes and corrected npm metadata. Use the existing npm release credentials; do not put tokens in source.
+4. Configure npm trusted publishing and enable the changeset-driven release workflow to ship package fixes and corrected npm metadata. See [the release guide](releases.md); version updates are committed automatically after successful CI on `main`.
 5. Share the useful catalog or a concrete integration example in relevant communities when appropriate. This work does not post announcements, solicit stars, or message other people.
 
 The optional `llms.txt` provides a concise project reference for tools that request it; it is not a search ranking mechanism.
