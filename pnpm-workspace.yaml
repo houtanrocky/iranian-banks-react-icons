@@ -1,40 +1,24 @@
 packages:
-  - 'packages/*'
-  - 'apps/*'
-
-onlyBuiltDependencies:
-  - esbuild
+  - packages/*
+  - apps/*
 
 allowBuilds:
   esbuild: true
 
 catalogs:
-  # React 19 runtime, types, and Vite React plugin
-  react:
-    react: ^19.2.0
-    react-dom: ^19.2.0
-    "@types/react": ^19.0.0
-    "@types/react-dom": ^19.0.0
-    "@vitejs/plugin-react": ^4.0.3
-
-  # SVG build pipeline — babel, svgr, svgo, terser, camelcase, rimraf
   build:
-    "@babel/core": ^7.15.5
-    "@babel/preset-react": ^7.14.5
-    "@svgr/cli": ^5.5.0
-    "@svgr/core": ^5.5.0
-    camelcase: ^6.2.0
-    rimraf: ^3.0.2
-    svgo: ^2.5.0
-    terser: ^5.7.2
-
-  # TypeScript, Vite, and linting
+    camelcase: ^6.3.0
+    svgo: ^4.1.0
+    terser: ^5.51.2
+  react:
+    '@types/react': 19.2.17
+    '@types/react-dom': 19.2.3
+    '@vitejs/plugin-react': ^6.1.2
+    react: 19.2.7
+    react-dom: 19.2.7
   tooling:
-    typescript: ^5.0.2
-    vite: ^4.4.5
-    "@typescript-eslint/eslint-plugin": ^6.0.0
-    "@typescript-eslint/parser": ^6.0.0
+    typescript: ^5.9.3
+    vite: ^8.3.5
 
-  # Release management
-  releases:
-    "@changesets/cli": ^2.26.2
+onlyBuiltDependencies:
+  - esbuild

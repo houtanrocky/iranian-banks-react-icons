@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "target": "ES2022", "module": "NodeNext", "moduleResolution": "NodeNext",
+    "strict": true, "noEmit": true, "skipLibCheck": false, "jsx": "react-jsx",
+    "lib": ["ES2022", "DOM"]
+  },
+  "include": ["react.tsx", "core.ts"]
+}

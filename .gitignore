@@ -30,6 +30,15 @@ optimized
 # Misc
 *.local
 dist-ssr
+.artifacts/
+coverage/
+test-results/
+playwright-report/
+.pages-publish/
+*.tsbuildinfo
+apps/docs/public/icons/
+apps/docs/public/social-card.png
+packages/*/LICENSE
 
 # Legacy (superseded by apps/docs)
 example/

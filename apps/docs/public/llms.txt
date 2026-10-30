@@ -1,0 +1,12 @@
+# Iranian Banks Icons
+
+> MIT-licensed SVG logos for 59 Iranian banks, payment platforms, PSPs and financial networks. 117 exports: 59 color and 58 monochrome icons. SnappPay is color-only.
+
+- [Documentation and searchable icon catalog](https://houtanrocky.github.io/iranian-banks-react-icons/)
+- [Source and contribution guide](https://github.com/houtanrocky/iranian-banks-react-icons)
+- [React package](https://www.npmjs.com/package/@iran-utils/iranian-banks-react-icons): React 16.13.1, 17, 18 and 19. SVG props and forwarded refs.
+- [Vue package](https://www.npmjs.com/package/@iran-utils/iranian-banks-vue-icons): Vue 3 components with SVG attribute forwarding.
+- [Core package](https://www.npmjs.com/package/@iran-utils/iranian-banks-icons-core): named exports containing viewBox and content strings.
+
+Import example: import { MellatColorIcon, MellatIcon } from '@iran-utils/iranian-banks-react-icons';
+Use width and height to size icons. Monochrome fill inherits from the root SVG; color variants preserve the logo palette. Use named ESM imports for tree shaking. Supply aria-label for meaningful icons or aria-hidden for decoration. Brand marks belong to their owners; the project is unaffiliated.

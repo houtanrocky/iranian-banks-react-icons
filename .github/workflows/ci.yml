@@ -1,0 +1,79 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Node ${{ matrix.node }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [22, 24]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node }}
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm test
+      - run: pnpm --filter docs build
+      - name: Generated declarations stay committed
+        run: git diff --exit-code -- packages/*/index.d.ts
+      - name: Install Chromium
+        if: matrix.node == 24
+        run: pnpm exec playwright install --with-deps chromium
+      - name: Browser and accessibility tests
+        if: matrix.node == 24
+        run: pnpm test:e2e
+      - name: Browser report
+        if: failure() && matrix.node == 24
+        uses: actions/upload-artifact@v7
+        with:
+          name: browser-report
+          path: |
+            playwright-report
+            test-results
+          retention-days: 7
+
+  compatibility:
+    name: React ${{ matrix.react }}, Vue ${{ matrix.vue }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - react: 16
+            vue: '3.0.0'
+          - react: 17
+            vue: '3'
+          - react: 18
+            vue: '3'
+          - react: 19
+            vue: '3'
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - run: pnpm test:packages
+        env:
+          TEST_REACT_MAJOR: ${{ matrix.react }}
+          TEST_VUE_VERSION: ${{ matrix.vue }}

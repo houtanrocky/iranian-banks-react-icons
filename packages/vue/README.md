@@ -3,12 +3,12 @@
 [![npm version](https://img.shields.io/npm/v/@iran-utils/iranian-banks-vue-icons?color=42b883&logo=npm)](https://www.npmjs.com/package/@iran-utils/iranian-banks-vue-icons)
 [![npm downloads](https://img.shields.io/npm/dm/@iran-utils/iranian-banks-vue-icons?color=blue)](https://www.npmjs.com/package/@iran-utils/iranian-banks-vue-icons)
 [![Bundle size](https://img.shields.io/bundlephobia/minzip/@iran-utils/iranian-banks-vue-icons?label=minzipped)](https://bundlephobia.com/package/@iran-utils/iranian-banks-vue-icons)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green)](https://github.com/houtan-rocky/iranian-banks-react-icons/blob/main/LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](https://github.com/houtanrocky/iranian-banks-react-icons/blob/main/LICENSE)
 [![Vue](https://img.shields.io/badge/Vue-3-42b883?logo=vue.js)](https://vuejs.org)
 
-Vue 3 SVG icon library for **60+ Iranian banks, PSPs, and payment providers** — logos for Melli, Mellat, Saderat, Tejarat, Pasargad, Saman, Parsian, Zarrinpal, Shaparak, and more. Every icon ships in full-color and monochrome variants.
+Vue 3 SVG icon library for **59 Iranian banks, PSPs, and payment providers** — logos for Melli, Mellat, Saderat, Tejarat, Pasargad, Saman, Parsian, Zarrinpal, Shaparak, and more. Includes 117 SVG variants: 59 color logos and 58 monochrome logos. SnappPay is color-only.
 
-**[→ Live Playground & Icon Browser](https://houtan-rocky.github.io/iranian-banks-react-icons/)**
+**[→ Live Playground & Icon Browser](https://houtanrocky.github.io/iranian-banks-react-icons/)**
 
 ---
 
@@ -162,7 +162,7 @@ Icons accept any attribute valid on an `<svg>` element:
 
 ## Available Icons
 
-Browse all icons interactively: **[Playground →](https://houtan-rocky.github.io/iranian-banks-react-icons/)**
+Browse all icons interactively: **[Playground →](https://houtanrocky.github.io/iranian-banks-react-icons/)**
 
 <details>
 <summary><strong>Banks (38 banks × 2 variants)</strong></summary>
@@ -276,4 +276,4 @@ Browse all icons interactively: **[Playground →](https://houtan-rocky.github.i
 
 ## License
 
-[MIT](https://github.com/houtan-rocky/iranian-banks-react-icons/blob/main/LICENSE) © [Houtan Rocky](https://github.com/houtan-rocky)
+[MIT](https://github.com/houtanrocky/iranian-banks-react-icons/blob/main/LICENSE) © [Houtan Rocky](https://github.com/houtanrocky)

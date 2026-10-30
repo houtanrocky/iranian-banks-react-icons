@@ -3,12 +3,12 @@
 [![npm version](https://img.shields.io/npm/v/@iran-utils/iranian-banks-react-icons?color=crimson&logo=npm)](https://www.npmjs.com/package/@iran-utils/iranian-banks-react-icons)
 [![npm downloads](https://img.shields.io/npm/dm/@iran-utils/iranian-banks-react-icons?color=blue)](https://www.npmjs.com/package/@iran-utils/iranian-banks-react-icons)
 [![Bundle size](https://img.shields.io/bundlephobia/minzip/@iran-utils/iranian-banks-react-icons?label=minzipped)](https://bundlephobia.com/package/@iran-utils/iranian-banks-react-icons)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green)](https://github.com/houtan-rocky/iranian-banks-react-icons/blob/main/LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](https://github.com/houtanrocky/iranian-banks-react-icons/blob/main/LICENSE)
 [![React](https://img.shields.io/badge/React-16%20|%2017%20|%2018%20|%2019-61dafb?logo=react)](https://reactjs.org)
 
-React SVG icon library for **60+ Iranian banks, PSPs, and payment providers** — logos for Melli, Mellat, Saderat, Tejarat, Pasargad, Saman, Parsian, Zarrinpal, Shaparak, and more. Every icon ships in full-color and monochrome variants.
+React SVG icon library for **59 Iranian banks, PSPs, and payment providers** — logos for Melli, Mellat, Saderat, Tejarat, Pasargad, Saman, Parsian, Zarrinpal, Shaparak, and more. Includes 117 SVG variants: 59 color logos and 58 monochrome logos. SnappPay is color-only.
 
-**[→ Live Playground & Icon Browser](https://houtan-rocky.github.io/iranian-banks-react-icons/)**
+**[→ Live Playground & Icon Browser](https://houtanrocky.github.io/iranian-banks-react-icons/)**
 
 ---
 
@@ -58,7 +58,7 @@ export default function App() {
 
 ## TypeScript
 
-Full TypeScript support is included. Every icon accepts `JSX.IntrinsicElements['svg']` — all standard SVG attributes including `width`, `height`, `fill`, `stroke`, `className`, `style`, `aria-*`, `ref`, event handlers, and more.
+Full TypeScript support is included. Every icon accepts `React.SVGProps<SVGSVGElement>` — all standard SVG attributes including `width`, `height`, `fill`, `stroke`, `className`, `style`, `aria-*`, `ref`, event handlers, and more.
 
 ```tsx
 import type { ComponentProps } from 'react';
@@ -119,7 +119,7 @@ All icons are standard function components. They accept every prop an `<svg>` el
 
 ## Available Icons
 
-Browse all icons interactively: **[Playground →](https://houtan-rocky.github.io/iranian-banks-react-icons/)**
+Browse all icons interactively: **[Playground →](https://houtanrocky.github.io/iranian-banks-react-icons/)**
 
 <details>
 <summary><strong>Banks (38 banks × 2 variants)</strong></summary>
@@ -233,4 +233,4 @@ Browse all icons interactively: **[Playground →](https://houtan-rocky.github.i
 
 ## License
 
-[MIT](https://github.com/houtan-rocky/iranian-banks-react-icons/blob/main/LICENSE) © [Houtan Rocky](https://github.com/houtan-rocky)
+[MIT](https://github.com/houtanrocky/iranian-banks-react-icons/blob/main/LICENSE) © [Houtan Rocky](https://github.com/houtanrocky)
